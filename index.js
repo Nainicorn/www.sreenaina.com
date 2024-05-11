@@ -13,7 +13,9 @@ for(section of sections) {
 function callback(entries) {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            console.log('intersecting');
+            entry.target.setAttribute('intersecting', '');
+        } else {
+            entry.target.removeAttribute('intersecting');
         }
     });
 };

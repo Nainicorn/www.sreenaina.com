@@ -4,11 +4,24 @@
   box-sizing: border-box;
 }
 
+:root {
+  --hue-color: 200;
+  --body-bgcolor: hsl(var(--hue-color), 60%, 20%);
+
+  --section-bgcolor: hsl(var(--hue-color), 60%, 80%);
+  --section-title-color: hsl(var(--hue-color), 80%, 90%);
+  --section-title-bgcolor: hsl(var(--hue-color), 80%, 10%);
+
+  --career-bgcolor: hsl(var(--hue-color), 15%, 90%);
+  --career-business-bgcolor: hsl(var(--hue-color), 15%, 40%);
+  --career-project-bgcolor: hsl(var(--hue-color), 15%, 60%);
+  --career-duration-bgcolor: hsl(var(--hue-color) 15%, 80%);
+}
+
 body {
-  /* padding-block: 5rem; */
   padding: 2rem;
   font-size: 2rem;
-  background-color: slategray;
+  background-color: var(--body-bgcolor);
 }
 
 header {
@@ -19,41 +32,45 @@ header {
   text-align: center;
 }
 
-/* @keyframes rotateAnimation {
+@keyframes sampleAnimation {
   from {
-    background-color: azure;
+    /* background-color: azure; */
   }
+
   to {
-    background-color:beige;
+    /* background-color:beige; */
   }
-} */
+}
 
 section {
-  /* min-height: 10rem; */
+  transition: all 0.5s ease-in-out;
   padding: 1rem;
   padding-top: 2rem;
   margin-bottom: 2rem;
   position: relative;
-  background-color: azure;
+  background-color: var(--section-bgcolor);
   box-shadow: 0px 0px 5px #ccc;
   border-radius: 0.5rem;
   font-size: 1rem;
 
-  /* animation-name: rotateAnimation;
-  animation-duration: 1ms; 
+  animation-name: sampleAnimation;
+  animation-duration: 1ms;
   animation-direction: alternate;
-  animation-timeline: scroll(block nearest); */
+  animation-timeline: scroll(block nearest);
 
   .title {
+    transition: all 0.5s ease-in-out;
+    opacity: 0.1;
     position: absolute;
-    background-color: yellowgreen;
+    background-color: var(--section-title-bgcolor);
+    color: var(--section-title-color);
+    font-size: 1.2rem;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 5px 25px 30px;
     top: -15px;
     left: 20px;
   }
 }
-
 
 section {
   &.career {
@@ -61,35 +78,52 @@ section {
     padding-top: 2rem;
     margin-bottom: 5rem;
     position: relative;
-    background-color: blanchedalmond;
+    background-color: var(--career-bgcolor);
     box-shadow: 0px 0px 5px #ccc;
     border-radius: 0.5rem;
 
     .business {
+      color: var(--section-title-color);
       position: absolute;
-      background-color: yellowgreen;
+      background-color: var(--career-business-bgcolor);
       padding: 5px 10px;
       border-radius: 5px;
       top: -15px;
       left: 20px;
+      font-size: 1.2rem;
     }
 
     .project {
       position: absolute;
-      background-color: yellowgreen;
+      background-color: var(--career-project-bgcolor);
       padding: 5px 10px;
-      border-radius: 5px;
+      border-radius: 20px 5px;
       top: -15px;
-      right: 10px;
+      right: 50px;
     }
 
     .duration {
       position: absolute;
-      background-color: yellowgreen;
+      background-color: var(--career-duration-bgcolor);
       padding: 5px 10px;
-      border-radius: 5px;
-      bottom: -15px;
+      border-radius: 5px 20px;
+      box-shadow: 0 0 3px #aaa;
+      bottom: -10px;
       right: 20px;
+      font-size: 0.8rem;
+    }
+
+    .link {
+      position: absolute;
+      background-color: #70A9A1;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      top: -12px;
+      right: 10px;
+      background-repeat: no-repeat;
+      background-image: url(images/file-type-link.svg);
+      background-size: cover;
     }
   }
 }
@@ -102,9 +136,13 @@ section {
     flex-wrap: wrap;
 
     .skill {
-      border: 1px solid red;
+      transition: all 0.5s ease-in-out;
+      opacity: 0.1;
       padding: 10px;
       background-repeat: no-repeat;
+      background-size: 32px;
+      background-position: left;
+      padding-left: 40px;
 
       &.html {
         background-image: url(images/file-type-html.svg);
@@ -112,6 +150,14 @@ section {
 
       &.css {
         background-image: url(images/file-type-css.svg);
+      }
+
+      &.scss {
+        background-image: url(images/file-type-scss.svg);
+      }
+
+      &.tailwind {
+        background-image: url(images/file-type-tailwind.svg);
       }
 
       &.js {
@@ -173,7 +219,83 @@ section {
       &.java {
         background-image: url(images/file-type-java.svg);
       }
+
+      &.sql {
+        background-image: url(images/file-type-sql.svg);
+      }
+
+      &.vscode {
+        background-image: url(images/file-type-vscode.svg);
+      }
+
+      &.drawio {
+        background-image: url(images/file-type-drawio.svg);
+      }
+
+      &.git {
+        background-image: url(images/file-type-git.svg);
+      }
+
+      &.github {
+        background-image: url(images/file-type-github.svg);
+      }
+
+      &.handlebars {
+        background-image: url(images/file-type-handlebars.svg);
+      }
+
+      &.axios {
+        background-image: url(images/file-type-axios.svg);
+      }
+
+      &.webapi {
+        background-image: url(images/file-type-webapi.svg);
+      }
+
+      &.lambda {
+        background-image: url(images/file-type-lambda.svg);
+      }
+
+      &.dynamodb {
+        background-image: url(images/file-type-dynamodb.svg);
+      }
+
+      &.mongo {
+        background-image: url(images/file-type-mongo.svg);
+      }
+
+      &.apigateway {
+        background-image: url(images/file-type-apigateway.svg);
+      }
+
+      &.node {
+        background-image: url(images/file-type-node.svg);
+      }
+
+      &.s3 {
+        background-image: url(images/file-type-s3.svg);
+      }
+
+      &.r53 {
+        background-image: url(images/file-type-r53.svg);
+      }
+
+      &.sam {
+        background-image: url(images/file-type-sam.svg);
+      }
     }
 
+  }
+}
+
+section {
+  &[intersecting] {
+    .title {
+      opacity: 1;
+    }
+
+    .skill {
+      opacity: 1;
+    }
   }
 }
