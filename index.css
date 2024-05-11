@@ -4,17 +4,29 @@
   box-sizing: border-box;
 }
 
-html,
 body {
   /* padding-block: 5rem; */
-  padding-inline: 5rem;
-  font-size: 1.2rem;
+  padding: 2rem;
+  font-size: 2rem;
   background-color: slategray;
 }
 
 header {
-  padding: 2rem;
+  padding-block: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 0px 0px 5px #000;
+  text-align: center;
 }
+
+/* @keyframes rotateAnimation {
+  from {
+    background-color: azure;
+  }
+  to {
+    background-color:beige;
+  }
+} */
 
 section {
   /* min-height: 10rem; */
@@ -26,6 +38,11 @@ section {
   box-shadow: 0px 0px 5px #ccc;
   border-radius: 0.5rem;
   font-size: 1rem;
+
+  /* animation-name: rotateAnimation;
+  animation-duration: 1ms; 
+  animation-direction: alternate;
+  animation-timeline: scroll(block nearest); */
 
   .title {
     position: absolute;
@@ -42,9 +59,9 @@ section {
   &.career {
     padding: 1rem;
     padding-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
     position: relative;
-    background-color: azure;
+    background-color: blanchedalmond;
     box-shadow: 0px 0px 5px #ccc;
     border-radius: 0.5rem;
 
@@ -63,7 +80,7 @@ section {
       padding: 5px 10px;
       border-radius: 5px;
       top: -15px;
-      left: 150px;
+      right: 10px;
     }
 
     .duration {
@@ -71,8 +88,92 @@ section {
       background-color: yellowgreen;
       padding: 5px 10px;
       border-radius: 5px;
-      top: -15px;
+      bottom: -15px;
       right: 20px;
     }
+  }
+}
+
+section {
+  .skills {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .skill {
+      border: 1px solid red;
+      padding: 10px;
+      background-repeat: no-repeat;
+
+      &.html {
+        background-image: url(images/file-type-html.svg);
+      }
+
+      &.css {
+        background-image: url(images/file-type-css.svg);
+      }
+
+      &.js {
+        background-image: url(images/file-type-js.svg);
+      }
+
+      &.python {
+        background-image: url(images/file-type-python.svg);
+      }
+
+      &.c {
+        background-image: url(images/file-type-c.svg);
+      }
+
+      &.r {
+        background-image: url(images/file-type-r.svg);
+      }
+
+      &.matlab {
+        background-image: url(images/file-type-matlab.svg);
+      }
+
+      &.handlebars {
+        background-image: url(images/file-type-handlebars.svg);
+      }
+
+      &.react {
+        background-image: url(images/file-type-react.svg);
+      }
+
+      &.nextjs {
+        background-image: url(images/file-type-nextjs.svg);
+      }
+
+      &.jquery {
+        background-image: url(images/file-type-jquery.svg);
+      }
+
+      &.express {
+        background-image: url(images/file-type-express.svg);
+      }
+
+      &.vite {
+        background-image: url(images/file-type-vite.svg);
+      }
+
+      &.webpack {
+        background-image: url(images/file-type-webpack.svg);
+      }
+
+      &.azure {
+        background-image: url(images/file-type-azure.svg);
+      }
+
+      &.aws {
+        background-image: url(images/file-type-aws.svg);
+      }
+
+      &.java {
+        background-image: url(images/file-type-java.svg);
+      }
+    }
+
   }
 }
