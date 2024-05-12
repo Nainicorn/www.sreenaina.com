@@ -36,10 +36,38 @@ body {
 
 header {
   padding-block: 1rem;
-  color: white;
-  text-shadow: 0px 0px 5px #000;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .name {
+    color: white;
+    text-shadow: 0px 0px 5px #000;
+  }
+
+  .photo {
+    background-image: url(./images/sreenaina.jpg);
+    background-size: cover;
+    width: 100px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
 }
+
+@media (max-width: 500px) {
+  header {
+    flex-direction: row-reverse;
+    .photo {
+      border-radius: 1rem;
+      width: 60px;
+    }
+    .name {
+      margin-left: 1rem;
+    }
+  }
+}
+
 
 @keyframes sampleAnimation {
   from {
