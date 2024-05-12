@@ -19,14 +19,23 @@
 }
 
 body {
-  padding: 2rem;
   font-size: 2rem;
   background-color: var(--body-bgcolor);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100vh;
+
+  main {
+    flex: 1;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    padding: 1rem;
+  }
 }
 
 header {
   padding-block: 1rem;
-  margin-bottom: 1rem;
   color: white;
   text-shadow: 0px 0px 5px #000;
   text-align: center;
@@ -34,18 +43,19 @@ header {
 
 @keyframes sampleAnimation {
   from {
-    /* background-color: azure; */
+    background-color: azure;
   }
 
   to {
-    /* background-color:beige; */
+    background-color: beige;
   }
 }
 
 section {
   transition: all 0.5s ease-in-out;
+  scroll-snap-align: start;
+  scroll-margin: 1.2rem;
   padding: 1rem;
-  padding-top: 2rem;
   margin-bottom: 2rem;
   position: relative;
   background-color: var(--section-bgcolor);
@@ -53,10 +63,10 @@ section {
   border-radius: 0.5rem;
   font-size: 1rem;
 
-  animation-name: sampleAnimation;
+  /* animation-name: sampleAnimation;
   animation-duration: 1ms;
   animation-direction: alternate;
-  animation-timeline: scroll(block nearest);
+  animation-timeline: scroll(block nearest); */
 
   .title {
     transition: all 0.5s ease-in-out;
