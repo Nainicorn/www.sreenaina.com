@@ -12,10 +12,15 @@
   --section-title-color: hsl(var(--hue-color), 80%, 90%);
   --section-title-bgcolor: hsl(var(--hue-color), 80%, 10%);
 
-  --career-bgcolor: hsl(var(--hue-color), 15%, 90%);
-  --career-business-bgcolor: hsl(var(--hue-color), 15%, 40%);
-  --career-project-bgcolor: hsl(var(--hue-color), 15%, 60%);
-  --career-duration-bgcolor: hsl(var(--hue-color) 15%, 80%);
+  --career-bgcolor: hsl(var(--hue-color), 35%, 90%);
+  --business-bgcolor: hsl(var(--hue-color), 65%, 40%);
+  --project-bgcolor: hsl(var(--hue-color), 55%, 60%);
+  --duration-bgcolor: hsl(var(--hue-color) 45%, 80%);
+  --link-bgcolor: hsl(var(--hue-color) 35%, 100%);
+}
+
+html {
+  height: 100%;
 }
 
 body {
@@ -24,7 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
 
   main {
     flex: 1;
@@ -46,9 +51,12 @@ body {
 header {
   padding-block: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+  position: sticky;
+  flex-wrap: wrap;
 
   .name {
     color: white;
@@ -58,57 +66,34 @@ header {
   .photo {
     background-image: url(./images/sreenaina.jpg);
     background-size: cover;
-    width: 100px;
+    width: 70px;
     aspect-ratio: 1;
     border-radius: 50%;
   }
 }
 
-@media (max-width: 500px) {
-  header {
-    flex-direction: row-reverse;
-    .photo {
-      border-radius: 1rem;
-      width: 60px;
-    }
-    .name {
-      margin-left: 1rem;
-    }
-  }
-}
-
-
-@keyframes sampleAnimation {
-  from {
-    background-color: azure;
-  }
-
-  to {
-    background-color: beige;
-  }
-}
-
 section {
-  transition: all 0.5s ease-in-out;
   scroll-snap-align: start;
   scroll-margin: 1.2rem;
   padding: 1rem;
   padding-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   position: relative;
   background-color: var(--section-bgcolor);
   box-shadow: 0px 0px 5px #ccc;
   border-radius: 0.5rem;
   font-size: 1rem;
 
-  /* animation-name: sampleAnimation;
-  animation-duration: 1ms;
-  animation-direction: alternate;
-  animation-timeline: scroll(block nearest); */
+  &.career {
+    padding: 1rem;
+    padding-top: 2rem;
+    position: relative;
+    background-color: var(--career-bgcolor);
+    box-shadow: 0px 0px 5px #ccc;
+    border-radius: 0.5rem;
+  }
 
   .title {
-    transition: all 0.5s ease-in-out;
-    opacity: 0.1;
     position: absolute;
     background-color: var(--section-title-bgcolor);
     color: var(--section-title-color);
@@ -122,65 +107,51 @@ section {
   .content {
     line-height: 2rem;
   }
-}
 
-section {
-  &.career {
-    padding: 1rem;
-    padding-top: 2rem;
-    margin-bottom: 5rem;
-    position: relative;
-    background-color: var(--career-bgcolor);
-    box-shadow: 0px 0px 5px #ccc;
-    border-radius: 0.5rem;
-
-    .business {
-      color: var(--section-title-color);
-      position: absolute;
-      background-color: var(--career-business-bgcolor);
-      padding: 5px 10px;
-      border-radius: 5px;
-      top: -15px;
-      left: 20px;
-      font-size: 1.2rem;
-    }
-
-    .project {
-      position: absolute;
-      background-color: var(--career-project-bgcolor);
-      padding: 5px 10px;
-      border-radius: 20px 5px;
-      top: -15px;
-      right: 50px;
-    }
-
-    .duration {
-      position: absolute;
-      background-color: var(--career-duration-bgcolor);
-      padding: 5px 10px;
-      border-radius: 5px 20px;
-      box-shadow: 0 0 3px #aaa;
-      bottom: -10px;
-      right: 20px;
-      font-size: 0.8rem;
-    }
-
-    .link {
-      position: absolute;
-      background-color: #70A9A1;
-      border-radius: 50%;
-      width: 25px;
-      height: 25px;
-      top: -12px;
-      right: 10px;
-      background-repeat: no-repeat;
-      background-image: url(images/file-type-link.svg);
-      background-size: cover;
-    }
+  .business {
+    color: var(--section-title-color);
+    position: absolute;
+    background-color: var(--business-bgcolor);
+    padding: 5px 10px;
+    border-radius: 5px;
+    top: -15px;
+    left: 20px;
+    font-size: 1.2rem;
   }
-}
 
-section {
+  .project {
+    position: absolute;
+    background-color: var(--project-bgcolor);
+    padding: 5px 10px;
+    border-radius: 20px 5px;
+    top: -15px;
+    right: 50px;
+  }
+
+  .duration {
+    position: absolute;
+    background-color: var(--duration-bgcolor);
+    padding: 5px 10px;
+    border-radius: 5px 20px;
+    box-shadow: 0 0 3px #aaa;
+    bottom: -10px;
+    right: 20px;
+    font-size: 0.8rem;
+  }
+
+  .link {
+    position: absolute;
+    background-color: var(--link-bgcolor);
+    border-radius: 10%;
+    width: 25px;
+    height: 25px;
+    top: -12px;
+    right: 10px;
+    background-repeat: no-repeat;
+    background-image: url(images/file-type-link.svg);
+    background-size: cover;
+  }
+
   .skills {
     display: flex;
     gap: 10px;
@@ -189,7 +160,6 @@ section {
 
     .skill {
       transition: all 0.5s ease-in-out;
-      opacity: 0.1;
       padding: 10px;
       background-repeat: no-repeat;
       background-size: 32px;
@@ -342,12 +312,8 @@ section {
 
 section {
   &[intersecting] {
-    .title {
-      opacity: 1;
-    }
+    .title {}
 
-    .skill {
-      opacity: 1;
-    }
+    .skill {}
   }
 }
