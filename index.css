@@ -67,7 +67,7 @@ header {
     background-image: url(./images/sreenaina.jpg);
     background-size: cover;
     width: 70px;
-    aspect-ratio: 1;
+    aspect-ratio: 0.9;
     border-radius: 50%;
   }
 }
@@ -155,6 +155,19 @@ section {
 
   .content {
     line-height: 2rem;
+    display: flex;
+    background-size: 200px;
+    background-repeat: no-repeat;
+
+    &.iqengine {
+      background-image: url(images/iqengine.svg);
+    }
+    &.masondash {
+      background-image: url(images/masondash.svg);
+    }
+    &.zazui {
+      background-image: url(images/zazui.svg);
+    }
   }
 
   .business {
@@ -385,14 +398,15 @@ section {
         background-image: url(images/file-type-sam.svg);
       }
     }
-
   }
 }
 
 section {
   &[intersecting] {
-    .title {}
+    .title {
+    }
 
-    .skill {}
+    .skill {
+    }
   }
 }
