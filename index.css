@@ -19,22 +19,13 @@
   --link-bgcolor: hsl(var(--hue-color) 35%, 100%);
 }
 
-html {
-  height: 100%;
-}
-
 body {
   font-size: 2rem;
   background-color: var(--body-bgcolor);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  height: 100%;
 
   main {
-    flex: 1;
-    overflow: auto;
-    scroll-snap-type: y mandatory;
     padding: 1rem;
 
     .work {
@@ -49,6 +40,7 @@ body {
 }
 
 header {
+  /* background-color: var(--body-bgcolor); */
   padding-block: 1rem;
   display: flex;
   flex-direction: row;
@@ -56,7 +48,8 @@ header {
   align-items: center;
   gap: 1rem;
   position: sticky;
-  flex-wrap: wrap;
+  /* top: 0; 
+  z-index: 1; */
 
   .name {
     color: white;
@@ -72,29 +65,6 @@ header {
   }
 }
 
-/* @keyframes section-view {
-  from {
-    scale: 0.8;
-    opacity: 0;
-  }
-
-  to {
-    scale: 1.0;
-    opacity: 1;
-  }
-}
-
-@keyframes section-title-view {
-  50% {
-    rotate: 3deg;
-  }
-
-  85%, 100% {
-    rotate: -3deg;
-  }
-} */
-
-
 section {
   scroll-snap-align: start;
   scroll-margin: 1.2rem;
@@ -106,11 +76,6 @@ section {
   box-shadow: 0px 0px 5px #ccc;
   border-radius: 0.5rem;
   font-size: 1rem;
-  /* animation: section-view linear forwards;
-  animation-timeline: view();
-  animation-range: entry 100px;
-  scale: 0.8;
-  opacity: 0; */
 
   &.career {
     padding: 1rem;
@@ -119,13 +84,6 @@ section {
     background-color: var(--career-bgcolor);
     box-shadow: 0px 0px 5px #ccc;
     border-radius: 0.5rem;
-
-    .business {
-      /* animation: section-title-view linear forwards;
-      animation-timeline: view();
-      animation-range: contain;
-      rotate: 3deg; */
-    }
 
     .skills {
       border-top: 1px solid var(--body-bgcolor);
@@ -149,20 +107,13 @@ section {
     border-radius: 5px 25px 30px;
     top: -15px;
     left: 20px;
-    transition: left 0.2s ease-in-out, rotate 0.2s ease-in-out;
-    rotate: 0deg;
-    /* animation: section-title-view linear forwards;
-    animation-timeline: view();
-    animation-range: contain;
-    rotate: 3deg; */
-
+   
     &:after {
       content: 'o';
       position: absolute;
       top: 1px;
       left: 3px;
       font-size: 5pt;
-
 
     }
   }
@@ -207,14 +158,13 @@ section {
   }
 
   .duration {
-    position: absolute;
     background-color: var(--duration-bgcolor);
     padding: 5px 10px;
-    border-radius: 5px 20px;
-    box-shadow: 0 0 3px #aaa;
-    bottom: -10px;
-    right: 20px;
+    border-radius: 5px;
     font-size: 0.8rem;
+    margin-left: auto;
+    width: 150px;
+    text-align: center;
   }
 
   .link {
@@ -418,16 +368,5 @@ section {
         background-image: url(images/file-type-sam.svg);
       }
     }
-  }
-}
-
-section {
-  &[intersecting] {
-    .title {
-      rotate: -2deg;
-      left: 40px;
-    }
-
-    .skill {}
   }
 }
