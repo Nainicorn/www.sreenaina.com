@@ -203,8 +203,12 @@ section {
           background-image: url(images/file-type-gaie.png);
         }
 
-        &.awsdev {
-          background-image: url(images/file-type-awsdev.png);
+        &.awsmle {
+          background-image: url(images/file-type-awsmle.png);
+        }
+
+        &.awsaip {
+          background-image: url(images/file-type-awsaip.png);
         }
       }
     }
